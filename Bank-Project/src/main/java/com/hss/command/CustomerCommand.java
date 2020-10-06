@@ -3,7 +3,8 @@ package com.hss.command;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.persistence.Column;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,7 +20,8 @@ public class CustomerCommand implements Serializable {
 
 	private long customerId;
 	private String customerName;
+	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate dob;
 	private String panNo;
-	private long uid;
+	private long aadharNo;
 }

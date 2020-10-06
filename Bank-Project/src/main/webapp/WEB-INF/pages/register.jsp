@@ -10,16 +10,16 @@
      <form:form action="save" method="post" modelAttribute="customer">
      <table>
         <tr>
-         <td><b>Customer Name  ::</b></td><td><form:input path="${customerName}" /></td>
+         <td><b>Customer Name  ::</b></td><td><form:input path="customerName" /></td>
          </tr>
           <tr>
-           <td><b>Date Of Birth ::</b></td><td><form:input path="${dob}"/></td>
+           <td><b>Date Of Birth ::</b></td><td><form:input path="dob"/></td>
            </tr>
            <tr>
-          <td> <b>Pan No        ::</b></td><td><form:input path="${panNo}"/></td>
+          <td> <b>Pan No        ::</b></td><td><form:input path="panNo"/></td>
           </tr>
           <tr>
-          <td><b>Aadhar No     ::</b></td><td><form:input path="${uid}"/></td>
+          <td><b>Aadhar No     ::</b></td><td><form:input path="aadharNo"/></td>
           </tr>
            <tr>
            <td></td><td> <input type="submit" value="Register"></td>

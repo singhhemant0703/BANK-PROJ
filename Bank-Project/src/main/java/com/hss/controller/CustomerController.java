@@ -35,6 +35,7 @@ public class CustomerController {
 		 model=new CustomerModel();
 		 System.out.println(cmd);
 		 BeanUtils.copyProperties(cmd,model);
+		 System.out.println(model);
 		 //use service
 		 result=customerService.registerCustomer(model);
 		 map.put("result",result);
