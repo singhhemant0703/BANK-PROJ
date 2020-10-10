@@ -33,16 +33,38 @@ public class CustomerController {
 		String result=null; 
 		CustomerModel model=null;
 		 model=new CustomerModel();
-		 System.out.println(cmd);
+		 
 		 BeanUtils.copyProperties(cmd,model);
-		 System.out.println(model);
+		 
 		 //use service
 		 result=customerService.registerCustomer(model);
 		 map.put("result",result);
 		return "redirect:/register";
 	}
+	
 	@GetMapping("show_customer")
-	public String showRegisterCustomer(CustomerCommand command) {
+	public String showCheckCustomer(Map<String,Object> map,@ModelAttribute("customer")CustomerCommand command) {
+		return "show";
+	}
+	@PostMapping("show_customer")
+	public String showRegisterCustomer(Map<String,Object> map,@ModelAttribute("customer")CustomerCommand command) {
+		  CustomerModel model=null;
+		  CustomerCommand cmd=null;
+		  //create command class object
+		  cmd=new CustomerCommand();
+		if(command.getPanNo()!=null) {
+			 model=customerService.getCustomerBasedOnPanNo(command.getPanNo());
+			 BeanUtils.copyProperties(model, cmd);
+			 map.put("result",cmd);
+		 }
+		else if(command.getAadharNo()!=0) {
+			model=customerService.getCustomerBasedOnAadharNo(command.getAadharNo());
+			BeanUtils.copyProperties(model, cmd);
+			 map.put("result",cmd);
+		}
+		else {
+			map.put("output","search customer based on Pan and Aadhar only");
+		}
 		return "show";
 	}
 	
