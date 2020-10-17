@@ -5,8 +5,8 @@
     <body bgcolor="#B19E9A"><br/>
       
     
-      <h1 style="color:red;border-radius: 25px;">Customer Registration(CIF) Form</h1><br/>
-    <div style="color:blue;border-radius: 20px;">
+      <h1 style="color:red;border-radius: 25px; text-align: center;">Customer Registration(CIF) Form</h1><br/><br/>
+    <div style="color:blue;border-radius: 20px;text-align: center">
      <form:form action="save" method="post" modelAttribute="customer">
      <table>
         <tr>
