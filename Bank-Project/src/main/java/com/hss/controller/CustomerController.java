@@ -50,4 +50,8 @@ public class CustomerController {
 	public String removeCustomer(CustomerCommand command) {
 		return "home";
 	}
+	@GetMapping("user-show")
+	public String showUsers() {
+		return "user-show";
+	}
 }
